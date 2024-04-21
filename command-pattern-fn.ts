@@ -1,0 +1,1 @@
+type CommandFunction<State> =(state:State)=>[State,(state:State)=>State] 
