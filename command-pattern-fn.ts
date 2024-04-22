@@ -26,7 +26,28 @@ function createCommandStack<State>(state: State) {
 }
 
 
-const addOne:CommandFunction<number> = (state)=>[state+1,(state)=>state-1];
+const addOne: CommandFunction<number> = (state) => [state + 1, (state) => state - 1];
 
-const commandStack = createCommandStack(0);
-commandStack.execute(addOne)
+const commandStack = createCommandStack(40);
+
+console.log(commandStack.execute(addOne))
+console.log(commandStack.execute(addOne))
+console.log(commandStack.undo());
+
+
+const substractOne: CommandFunction<number> = (state) => [state - 1, (state) => state + 1];
+
+const cs = createCommandStack(78);
+console.log(cs.execute(substractOne))
+
+const createSetValue = (value: number): CommandFunction<number> => {
+
+    return (state) => {
+        const _originalState = state;
+        return [value, () => _originalState]
+    }
+}
+
+
+const setTo42 = createSetValue(79);
+console.log(cs.execute(setTo42));
