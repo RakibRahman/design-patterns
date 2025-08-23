@@ -22,6 +22,12 @@ class PdfDocument:Document{
     }
 }
 
+class NullDocument:Document{
+    override fun open(){
+        println("Unknown document type")
+    }
+}
+
 class DocumentFactory{
     enum class DocumentType{WORD,EXCEL,PDF}
 
@@ -31,7 +37,7 @@ class DocumentFactory{
                 DocumentType.WORD -> WordDocument()
                 DocumentType.EXCEL -> ExcelDocument()
                 DocumentType.PDF -> PdfDocument()
-                else -> throw IllegalArgumentException("Unknown document type: $type")
+                else -> NullDocument()
             }
         }
     }
