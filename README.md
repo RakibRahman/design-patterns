@@ -8,3 +8,6 @@ The Singleton pattern is crucial because it helps you manage shared resources mo
 
 # Factory Pattern
 The Factory Method pattern is a creational design pattern that provides an interface for creating objects in a superclass, but it allows subclasses to alter the type of objects that will be created. Instead of calling a constructor directly to create an object, the client calls a factory method defined by an abstract class or interface, which delegates the process to derived classes. This approach promotes loose coupling and adheres to the Open/Closed Principle, allowing a system to be extended without modifying existing code.
+
+# Abstract Factory pattern 
+A design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes.
