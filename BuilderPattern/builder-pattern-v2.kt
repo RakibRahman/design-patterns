@@ -27,6 +27,11 @@ class PizzaBuilder(private var size: SIZE,private var crust:CRUST){
 }
 
 fun main() {
-    val largePizza = PizzaBuilder(SIZE.LARGE, CRUST.THICK).setCheese(false).addTopping("chicken").addTopping("chilli").build()
+    val largePizza = PizzaBuilder(SIZE.LARGE, CRUST.THICK)
+        .setCheese(false)
+        .addTopping("chicken")
+        .addTopping("chilli")
+        .build()
+
     println("Size: ${largePizza.size}, Crust: ${largePizza.crust}, Toppings: ${largePizza.toppings}, Cheese: ${largePizza.cheese}")
 }

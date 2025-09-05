@@ -40,4 +40,5 @@ val house = BuilderPattern.House.Builder(rooms = 4)   // required
 .setColor("Blue")                  // optional
 .setFloors(2)                      // optional
 .build()
+
 This makes house creation  much cleaner and readable.

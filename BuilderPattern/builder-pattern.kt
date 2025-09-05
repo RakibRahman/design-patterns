@@ -8,7 +8,6 @@ data class House(
     val hasGarden: Boolean = false
     )
 
-
 class HouseBuilder(private var rooms: Int,private var bathrooms: Int){
     private var hasGarage: Boolean = false
     private var hasGarden: Boolean = false
