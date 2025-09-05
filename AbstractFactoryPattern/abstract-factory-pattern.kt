@@ -1,7 +1,11 @@
+package AbstractFactoryPattern
+
+import FactoryPattern.ExcelDocument
+import FactoryPattern.WordDocument
 
 // Abstract Factory Interface
 interface DocumentAbstractFactory{
-    fun createDocument():Document
+    fun createDocument(): Document
 }
 
 
@@ -19,7 +23,7 @@ class ExcelDocumentFactory : DocumentAbstractFactory {
 }
 
 class Client(factory: DocumentAbstractFactory){
-    private val document:Document = factory.createDocument()
+    private val document: Document = factory.createDocument()
 
     fun openDocument(){
         document.open()
@@ -69,11 +73,11 @@ object VehicleFactory {
 fun main(){
     val wordFactory:DocumentAbstractFactory = WordDocumentFactory()
     val client1 = Client(wordFactory)
-    client1.openDocument() // Outputs: Opening Word Document
+    client1.openDocument() // Outputs: Opening Word FactoryPattern.Document
 
     val excelFactory: DocumentAbstractFactory = ExcelDocumentFactory()
     val client2 = Client(excelFactory)
-    client2.openDocument() // Outputs: Opening Excel Document
+    client2.openDocument() // Outputs: Opening Excel FactoryPattern.Document
 
 
     val carFactory:VehicleAbstractFactory = CarFactory()

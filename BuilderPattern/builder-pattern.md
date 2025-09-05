@@ -27,14 +27,14 @@ The core benefit is that it supports creating different types and representation
 - When multiple representations of the same object is required.
 
 ## Quick Example
-Imagine we want to create a `House` object.  
+Imagine we want to create a `BuilderPattern.House` object.  
 A house always needs some **required properties** like the number of rooms, but it may also have **optional properties** such as a garden, garage, or swimming pool.
 
 Without the Builder Pattern, we might end up with a **large constructor** that takes every possible parameter:
-val house = House(rooms = 4, hasGarden = true, hasGarage = false, color = "Blue", floors = 2) // // Creating a house becomes confusing
+val house = BuilderPattern.House(rooms = 4, hasGarden = true, hasGarage = false, color = "Blue", floors = 2) // // Creating a house becomes confusing
 
 With the Builder Pattern:
-val house = House.Builder(rooms = 4)   // required
+val house = BuilderPattern.House.Builder(rooms = 4)   // required
 .setGarden(true)                   // optional
 .setGarage(true)                   // optional
 .setColor("Blue")                  // optional

@@ -1,4 +1,4 @@
-import javax.print.Doc
+package FactoryPattern
 
 interface Document{
     fun open()
@@ -6,19 +6,19 @@ interface Document{
 
 class WordDocument : Document {
     override fun open() {
-        println("Opening Word Document.")
+        println("Opening Word FactoryPattern.Document.")
     }
 }
 
 class ExcelDocument : Document {
     override fun open() {
-        println("Opening Excel Document.")
+        println("Opening Excel FactoryPattern.Document.")
     }
 }
 
 class PdfDocument:Document{
     override fun open() {
-        println("Successfully opened PDF Document.")
+        println("Successfully opened PDF FactoryPattern.Document.")
     }
 }
 
@@ -55,7 +55,7 @@ class Guitar:Instrument{
 
 class Piano:Instrument{
     override fun play(){
-        println("Playing the Piano")
+        println("Playing the FactoryPattern.Piano")
     }
 }
 
