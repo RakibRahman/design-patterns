@@ -1,10 +1,11 @@
+Spent some time exploring the Prototype Pattern in Kotlin—here’s what I discovered 
 # The Builder Pattern
 
 ## What it is
 A creational design pattern that lets us create complex objects step by step.  
 Other creational patterns, such as the **Factory Pattern**, support object creation in a single step.  
 The Builder Pattern provides a systematic way to create objects with various properties.  
-It simplifies the creation of complex objects with a clean approach and flexibility.
+Builder → “Assemble objects gradually, choose options freely.”
 
 ## The problem it solves
 The Builder Pattern shines when an object requires—or can be created with—numerous properties or parameters.  

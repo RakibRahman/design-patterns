@@ -1,5 +1,6 @@
 package AbstractFactoryPattern
 
+import FactoryPattern.Document
 import FactoryPattern.ExcelDocument
 import FactoryPattern.WordDocument
 

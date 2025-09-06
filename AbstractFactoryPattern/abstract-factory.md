@@ -4,6 +4,7 @@ Studied this pattern today, sharing my takeaways:
 
 What it is:
 A creational design pattern that provides an interface for creating related or dependent objects without specifying their concrete classes. Think of it as a “factory of factories.” The core idea is to create related objects without hardcoding their types.
+Abstract Factory → Families of related objects, created together.
 
 The problem it solves:
 It gives a structured way to create a whole set of related objects that are meant to work together. This guarantees consistency — all created objects belong to the same family and remain compatible.
