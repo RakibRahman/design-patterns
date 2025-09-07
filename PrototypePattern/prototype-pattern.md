@@ -20,6 +20,7 @@ It also avoids the overhead of complex initialization for each new object.
 
 * Cloning large objects can be costly in memory.
 * Circular references (objects pointing to each other) can cause issues if not handled properly.
+* Shallow copy creates shared references between original and clone, causing unintended side effects when modifying nested objects.
 
 ## When to use
 
