@@ -1,17 +1,22 @@
 package PrototypePattern
 
-data class Address(var street: String, var city: String)
+import Prototype
 
-data class Person(val name: String, private val addresses: MutableList<Address>) {
+
+data class Address(var street: String, var city: String){
+    fun copy(): Address = Address(street,city)
+}
+
+data class Person(val name: String, private val addresses: MutableList<Address>):Prototype<Person> {
     fun addAddress(address: Address) {
         addresses.add(address)
     }
 
     fun getAddresses(): List<Address> = addresses
 
-    fun copy(): Person {
-        // TODO: Implement deep copy of the addresses list
-        return Person(name, addresses)
+    override fun clone(): Person {
+       val deepCopyAddresses = addresses.map { it.copy()}.toMutableList()
+        return Person(name, deepCopyAddresses)
     }
 
     override fun toString(): String {
@@ -25,9 +30,9 @@ fun main() {
     originalPerson.addAddress(Address("123 Main St", "New York"))
     originalPerson.addAddress(Address("456 Elm St", "Boston"))
 
-    val clonedPerson = originalPerson.copy()
+    val clonedPerson = originalPerson.clone()
 
-    clonedPerson.getAddresses()[0].street = "789 Oak St"
+    clonedPerson.getAddresses()[0].street = "Uttara"
 
     println("Original Person: $originalPerson")
     println("Cloned Person: $clonedPerson")
