@@ -20,6 +20,6 @@ Drawbacks:
 - Introduces a lot of interfaces and classes, which can feel heavy for small use cases.
 
 Quick Example:
-Instead of creating music files directly, we delegate the job to specific factories (AbstractFactoryPattern.MP3FileFactory, AbstractFactoryPattern.WAVFileFactory, AbstractFactoryPattern.FLACFileFactory).
-The client (BuilderPattern.AbstractFactoryPattern.FactoryPattern.main) just uses AbstractFactoryPattern.MusicFileFactory to get the right object — no need to know concrete classes.
+Instead of creating music files directly, we delegate the job to specific factories (creational_patterns.MP3FileFactory, creational_patterns.WAVFileFactory, creational_patterns.FLACFileFactory).
+The client (BuilderPattern.AbstractFactoryPattern.creational_patterns.main) just uses creational_patterns.MusicFileFactory to get the right object — no need to know concrete classes.
 Adding a new format? Just plug in a new factory; the existing code stays untouched.

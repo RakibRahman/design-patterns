@@ -1,4 +1,4 @@
-package PrototypePattern
+package creational_patterns.PrototypePattern
 
 abstract class Shape(open var color: String) {
     abstract fun cloneShape(): Shape

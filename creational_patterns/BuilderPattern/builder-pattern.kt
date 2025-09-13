@@ -1,4 +1,4 @@
-package BuilderPattern
+package creational_patterns.BuilderPattern
 
 data class House(
     val rooms: Int,

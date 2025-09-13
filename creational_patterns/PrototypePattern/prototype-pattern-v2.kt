@@ -1,4 +1,4 @@
-package PrototypePattern
+package creational_patterns.PrototypePattern
 
 import Prototype
 

@@ -1,4 +1,4 @@
-package FactoryPattern
+package creational_patterns.FactoryPattern
 
 interface Document{
     fun open()
@@ -6,19 +6,19 @@ interface Document{
 
 class WordDocument : Document {
     override fun open() {
-        println("Opening Word FactoryPattern.Document.")
+        println("Opening Word creational_patterns.Document.")
     }
 }
 
 class ExcelDocument : Document {
     override fun open() {
-        println("Opening Excel FactoryPattern.Document.")
+        println("Opening Excel creational_patterns.Document.")
     }
 }
 
 class PdfDocument:Document{
     override fun open() {
-        println("Successfully opened PDF FactoryPattern.Document.")
+        println("Successfully opened PDF creational_patterns.Document.")
     }
 }
 
@@ -55,7 +55,7 @@ class Guitar:Instrument{
 
 class Piano:Instrument{
     override fun play(){
-        println("Playing the FactoryPattern.Piano")
+        println("Playing the creational_patterns.Piano")
     }
 }
 
