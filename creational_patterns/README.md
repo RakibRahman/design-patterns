@@ -29,3 +29,95 @@ A creational pattern that helps you construct complex objects, step by step, in 
 
 # Prototype Pattern
 A design pattern that lets create a new objects by copying existing  ones. It allows efficient and consistent replication of objects.
+
+
+# Implementing the three design patterns — Singleton, Factory, and Builder
+
+```angular2html
+object DatabaseConnection {
+fun connect() {
+println("Connected to the database.")
+logConnection()
+}
+
+private fun logConnection() {
+val connectionTime = java.time.LocalDateTime.now()
+println("Connected to the database at $connectionTime")
+}
+        }
+
+abstract class BankAccount(
+protected var accountNumber: String,
+protected var balance: Double,
+protected val accountType: String
+) {
+abstract fun accountDetails()
+}
+
+class SavingsAccount(accountNumber: String, balance: Double, accountType: String) :
+BankAccount(accountNumber, balance, accountType) {
+
+override fun accountDetails() {
+println("Savings Account [Account Number=$accountNumber, Balance=$balance], AccountType=$accountType")
+}
+        }
+
+class CheckingAccount(accountNumber: String, balance: Double, accountType: String) :
+BankAccount(accountNumber, balance, accountType) {
+
+override fun accountDetails() {
+println("Checking Account [Account Number=$accountNumber, Balance=$balance], AccountType=$accountType")
+}
+        }
+
+fun createAccount(type: String, accountNumber: String, balance: Double): BankAccount {
+return when (type) {
+"Savings" -> SavingsAccount(accountNumber, balance, type)
+"Checking" -> CheckingAccount(accountNumber, balance, type)
+else -> throw IllegalArgumentException("Unknown account type: $type")
+}
+        }
+
+data class LoanApplication private constructor(
+val applicantName: String,
+val loanAmount: Double,
+val termLength: Int,
+val collateral: String?,
+val interestRate: Double = 0.0,
+) {
+class Builder(private val applicantName: String, private val loanAmount: Double) {
+private var termLength = 0
+private var collateral: String? = null
+private var interestRate = 0.0
+
+fun withTermLength(termLength: Int) = apply { this.termLength = termLength }
+fun withCollateral(collateral: String?) = apply { this.collateral = collateral }
+fun withInterestRate(rate: Double) = apply { this.interestRate = rate }
+
+fun build() = LoanApplication(applicantName, loanAmount, termLength, collateral, interestRate)
+}
+
+override fun toString(): String {
+return "LoanApplication [Applicant Name=$applicantName, Loan Amount=$loanAmount, Term Length=$termLength years, Collateral=$collateral, InterestRate=$interestRate]"
+}
+        }
+
+fun main() {
+DatabaseConnection.connect()
+
+val savingsAccount = createAccount("Savings", "123456", 1000.00)
+val checkingAccount = createAccount("Checking", "654321", 500.00)
+val businessAccount = createAccount("Business", "24321", 900.00)
+
+savingsAccount.accountDetails()
+checkingAccount.accountDetails()
+businessAccount.accountDetails()
+
+val loanApplication = LoanApplication.Builder("Alice", 50000.00)
+.withTermLength(15)
+.withCollateral("House")
+.withInterestRate(5.00)
+.build()
+println(loanApplication)
+}
+```
