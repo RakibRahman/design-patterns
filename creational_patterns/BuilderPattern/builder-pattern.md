@@ -8,7 +8,7 @@ The Builder Pattern provides a systematic way to create objects with various pro
 Builder → “Assemble objects gradually, choose options freely.”
 
 ## The problem it solves
-The Builder Pattern shines when an object requires—or can be created with—numerous properties or parameters.  
+The Builder Pattern shines when an object requires or can be created with numerous properties or parameters.  
 It is particularly useful when the construction process involves multiple steps.  
 The core benefit is that it supports creating different types and representations of an object using the same construction code.
 
@@ -28,7 +28,7 @@ The core benefit is that it supports creating different types and representation
 - When multiple representations of the same object is required.
 
 ## Quick Example
-Imagine we want to create a `creational_patterns.House` object.  
+Imagine we want to create a `House` object.  
 A house always needs some **required properties** like the number of rooms, but it may also have **optional properties** such as a garden, garage, or swimming pool.
 
 Without the Builder Pattern, we might end up with a **large constructor** that takes every possible parameter:
