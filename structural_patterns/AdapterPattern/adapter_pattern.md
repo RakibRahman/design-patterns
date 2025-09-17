@@ -1,13 +1,23 @@
 # The Adapter Pattern
-## What it is:
-The adapter pattern is a structural pattern that helps object with incompatible interfaces to work together. 
+
+## What it is
+The Adapter Pattern is a structural design pattern that allows objects with incompatible interfaces to work together.
 
 ## The problem it solves
-Adapter patterns solve the problem when two different interfaces needs to work together seamlessly.
+It enables collaboration between two different interfaces that otherwise cannot interact seamlessly.
 
 ## Benefits
-- By allowing two different interfaces to interact it offers high compatibility.
-- We can introduce new interface without the touching existing code.
-- Reusability of existing functionalities  where interface does not matches. 
+- Improves compatibility by allowing incompatible interfaces to interact.
+- Makes it possible to introduce new interfaces without modifying existing code.
+- Promotes reusability of existing functionality even when interfaces don’t match.
 
 ## Drawbacks
+- Adds an extra layer of abstraction, which may increase complexity.
+- Could introduce slight performance overhead in some cases.
+
+## When to use
+- When objects with incompatible interfaces need to collaborate.
+- When you want to reuse an existing class but its interface doesn’t meet current requirements.
+- When following SOLID principles:
+    - **SRP (Single Responsibility Principle):** separates business logic from adaptation logic.
+    - **OCP (Open/Closed Principle):** allows introducing new types or features without modifying existing code.  
