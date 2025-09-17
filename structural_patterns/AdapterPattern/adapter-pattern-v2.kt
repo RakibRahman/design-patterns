@@ -26,7 +26,7 @@ class DisplayPort {
     }
 }
 
-class Adapter(private val hdmi: DisplayPort) : Hdmi {
+class HdmiAdapter(private val hdmi: DisplayPort) : Hdmi {
     override fun connectWithHdmiCable() {
         hdmi.connectWithDisplayPortCable()
     }
@@ -38,6 +38,6 @@ fun main() {
     mediaPlayerAdapter.playAudio("make it rain")
 
     val displayPort = DisplayPort()
-    val adapter: Hdmi = Adapter(displayPort)
+    val adapter: Hdmi = HdmiAdapter(displayPort)
     adapter.connectWithHdmiCable()
 }
