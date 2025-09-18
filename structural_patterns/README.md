@@ -4,4 +4,7 @@ Structural design patterns focus on managing object composition and relationship
 
 
 # Adapter Pattern
-The adapter pattern allows object with incompatible interfaces to work together. with this p
+The adapter pattern allows object with incompatible interfaces to work together.
+
+# Decorator Pattern
+This pattern allows to add behavior to object dynamically without altering its structure.
