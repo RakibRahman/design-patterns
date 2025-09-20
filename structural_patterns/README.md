@@ -8,3 +8,5 @@ The adapter pattern allows object with incompatible interfaces to work together.
 
 # Decorator Pattern
 This pattern allows to add behavior to object dynamically without altering its structure.
+
+# Composite Pattern
